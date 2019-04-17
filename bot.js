@@ -34,7 +34,7 @@ client.on('ready', () => {
   console.log('╔[════════════]╗')
   console.log('Created By:Mahdi')
   console.log('╚[════════════]╝')
-client.user.setActivity("%help | By Mahdi",{type: 'WATCHING'});
+client.user.setActivity("#help | By Mazen",{type: 'WATCHING'});
 console.log('Done The Watching Setup Completed')
 	
 });
@@ -60,7 +60,7 @@ message.channel.send('Done The Rainbow Role Setup Has Been Completed')//if the s
 client.on('ready', () => {//new ready event
   setInterval(function(){
       client.guilds.forEach(g => {
-                  var role = g.roles.find('name', 'Rainbow bot.');//rainbow role name
+                  var role = g.roles.find('name', 'Rainbow');//rainbow role name
                   if (role) {
                       role.edit({color : "RANDOM"});
                   };
@@ -69,16 +69,16 @@ client.on('ready', () => {//new ready event
 })
 
 client.on("message", message => {//new msg event
-  if (message.content === "%help") {//the help cmd
+  if (message.content === "#help") {//the help cmd
       message.react('🌈')
         let rainembed = new Discord.RichEmbed()//new embed
         //the embed description (help msg)
         .setDescription(`**
 =====================🌈 RainbowBot. 🌈=====================
-%set 
+#set 
  - لإنشاء رتبة الرينبو وبدا الرينبو
 - To create the role of the Rainbow & Start The Rainbow
-%inv 
+#inv 
 - لدعوة البوت
 - To Invite the bot
 خطوات لو الرتبة م أشتغلت .!!
@@ -94,12 +94,12 @@ The steps of the role did not worked .!!
 message.author.sendEmbed(rainembed)//send the embed to the author dm
     }})
    client.on('message', message => {//new cmd
-	   if(message.content.startsWith(`%inv`)) { //the invite bot cmd
+	   if(message.content.startsWith(`#inv`)) { //the invite bot cmd
 		   if(!message.channel.guild) return;
                  message.react('🌈')
 		   var embed = new Discord.RichEmbed()
-		   .setTitle(">> ClickHere To Add" + `${client.user.username}` + " <<")
-		   .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&scope=bot&permissions=2080374975")
+		   .setTitle(">> ضغط لإضافة البوت" + `${client.user.username}` + " <<")
+		   .setURL("https://discordapp.com/api/oauth2/authorize?client_id=568208757885108264&permissions=8&scope=bot")
 		   .setTimestamp()
 		   .setFooter(`Requested By | ${message.author.username}`)
 		   .setColor("RANDOM")
